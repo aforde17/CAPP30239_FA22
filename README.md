@@ -1,3 +1,5 @@
-# CAPP30239 FALL'22
+# CAPP30239 - Data Visualization for Policy Analysis FALL'22
 
-Main repository for Akila Forde's CAPP30239 - Data Visualization for Policy Analysis coursework and projects
+## Purpose
+
+Main repository for Akila Forde's coursework and projects for CAPP30239.
