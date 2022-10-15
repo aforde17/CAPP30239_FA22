@@ -15,7 +15,7 @@ This folder contains two assignments for Week 3 of Data Visualization for Policy
     - Source Type: Primary
 
 2. Covid-19 Stay-at-Home Policy
-    - Collection indicator and date variables as to whether a state enacted a state-wide stay-at-home order or not, and if it did, when the order was enacted and rescinded.
+    - Collection of indicator and date variables as to whether a state enacted a state-wide stay-at-home order or not, and if it did, when the order was enacted and rescinded.
     - https://www.nytimes.com/interactive/2020/us/coronavirus-stay-at-home-order.html
     - Source Type: Secondary
 
