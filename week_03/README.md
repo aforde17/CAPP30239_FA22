@@ -17,6 +17,7 @@ This folder contains two assignments for Week 3 of Data Visualization for Policy
 2. Covid-19 Stay-at-Home Policy
     - Collection of indicator and date variables as to whether a state enacted a state-wide stay-at-home order or not, and if it did, when the order was enacted and rescinded.
     - https://www.nytimes.com/interactive/2020/us/coronavirus-stay-at-home-order.html
+    - https://en.wikipedia.org/wiki/U.S._state_and_local_government_responses_to_the_COVID-19_pandemic
     - Source Type: Secondary (To be merged with the marriage and divorce rates data by state)
 
 
@@ -34,4 +35,3 @@ At the moment, I'm thinking of visualizing the state data using maps and drawing
 #### Any concerns about the data
 + Lack of data points for certain states:
     - States like Hawaii, California, New Mexico do not report their Divorce numbers publicly, so a point of contention would be whether to exclude the states in the divorce comparison, or fill in the data with comparable survey data from the U.S. Census' American Community Survey.
-    
