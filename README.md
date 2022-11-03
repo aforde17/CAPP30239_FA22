@@ -21,3 +21,8 @@ Main repository for Akila Forde's coursework and projects for CAPP30239 at the U
 
 
 ### Week 5: More Plots
++ [Scatterplots](https://aforde17.github.io/CAPP30239_FA22/week_04/histogram.html)
++ [Histograms](https://aforde17.github.io/CAPP30239_FA22/week_04/scatterplot.html)
+
+
+### Week 6: Parts of a Whole
