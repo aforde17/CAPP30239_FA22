@@ -10,8 +10,8 @@ const svg = d3.select("#chart")
 d3.csv('../../data/scatter_data.csv').then(data => {
 
   for (let d of data) {
-    d.mar_rate_19 = +d.mar_rate_19;
-    d.mar_rate_20 = +d.mar_rate_20; // using timeParse function we created above
+    d.div_rate_19 = +d.div_rate_19;
+    d.div_rate_20 = +d.div_rate_20; // using timeParse function we created above
   }
 
   console.log(data)
@@ -26,11 +26,11 @@ d3.csv('../../data/scatter_data.csv').then(data => {
     .range(["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]);
 
   let x = d3.scaleLinear()
-    .domain([0, 26]).nice()
+    .domain([0, 5]).nice()
     .range([margin.left, width - margin.right]);
 
   let y = d3.scaleLinear()
-    .domain([0, 26]).nice()
+    .domain([0, 5]).nice()
     .range([height - margin.bottom, margin.top]);
 
   svg.append("g")
@@ -48,8 +48,8 @@ d3.csv('../../data/scatter_data.csv').then(data => {
     .data(data)
     .enter()
     .append("circle")
-      .attr("cx", function (d) { return x(d.mar_rate_19); } )
-      .attr("cy", function (d) { return y(d.mar_rate_20); } )
+      .attr("cx", function (d) { return x(d.div_rate_19); } )
+      .attr("cy", function (d) { return y(d.div_rate_20); } )
       .style("fill", function (d) { return color(d.group) } )
     .join("circle")
     .attr("r", 2)
@@ -66,7 +66,6 @@ d3.csv('../../data/scatter_data.csv').then(data => {
       var legend = svg.append('g')
       .attr('class', 'legend')
       .attr('transform', 'translate(' + (padding + 12) + ', 30)');
-  
 
     // Legend
     legend.selectAll('rect')
@@ -97,7 +96,6 @@ d3.csv('../../data/scatter_data.csv').then(data => {
         .attr('text-anchor', 'start')
         .attr('alignment-baseline', 'hanging');
       
-      
       svg.append("text")
         .attr("class", "x label")
         .attr("text-anchor", "end")
@@ -123,7 +121,7 @@ d3.csv('../../data/scatter_data.csv').then(data => {
       d3.select(this).attr("fill", "red");
       tooltip
         .style("visibility", "visible")
-        .html(`State: ${d.State}<br />2019 Marriage rate: ${d.mar_rate_19}<br />2020 Marriage Rate: ${d.mar_rate_20}`);
+        .html(`State: ${d.State}<br />2019 Divorce rate: ${d.div_rate_19}<br />2020 Divorce Rate: ${d.div_rate_20}`);
     })
     .on("mousemove", function(event) {
       tooltip
