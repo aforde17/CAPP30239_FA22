@@ -8,7 +8,7 @@ const svg = d3.select("#chart")
 d3.json("libs/counties-albers-10m.json").then(us => {
 
   const counties = topojson.feature(us, us.objects.states); // Map simple geometries
-  console.log(counties);
+  console.log(counties.features);
 
   const path = d3.geoPath();
 
