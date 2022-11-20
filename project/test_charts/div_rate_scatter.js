@@ -23,7 +23,7 @@ d3.csv('../../data/scatter_data.csv').then(data => {
 
   const color = d3.scaleOrdinal()
     .domain(groups)
-    .range(["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]);
+    .range(["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]); //Sunset Color Scheme
 
   let x = d3.scaleLinear()
     .domain([0, 5]).nice()

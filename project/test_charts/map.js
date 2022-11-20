@@ -35,7 +35,7 @@ Promise.all([
   // // Quantize evenly breakups domain into range buckets
   const color = d3.scaleOrdinal()
     .domain(groups)
-    .range(["#400020", "#804080" , "#C080C0", "#D9B3D9", "#F2E6F2"]);
+    .range(["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]);
   
   console.log(groups)
   console.log(color)
@@ -47,7 +47,7 @@ Promise.all([
         d3.scaleOrdinal(
           ["By March 22", "By March 29", "By April 5",
            "By April 12", "No Statewide order"],
-          ["#400020", "#804080" , "#C080C0", "#D9B3D9", "#F2E6F2"]
+           ["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]
         ),
         { title: "Stay-at-Home order enacted" }
       ));

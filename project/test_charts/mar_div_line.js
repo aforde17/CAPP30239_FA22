@@ -1,5 +1,5 @@
-let height = 500,
-    width = 800,
+const height = 610,
+    width = 975,
     margin = ({ top: 40, right: 50, bottom: 35, left: 70 })
     innerWidth = width - margin.left - margin.right;
 
@@ -27,11 +27,13 @@ d3.csv("../../data/us_mar_div.csv").then(data => {
     .range([height - margin.bottom, margin.top]);
 
   svg.append("g")
+    .attr("class", "x-axis")
     .attr("transform", `translate(0,${height - margin.bottom})`)
     .call(d3.axisBottom(x));
 
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
+    .style("font-size", "100px") // Font-size not working
     .call(d3.axisLeft(y).tickFormat(d => d ));
 
   let line = d3.line()
@@ -76,6 +78,7 @@ d3.csv("../../data/us_mar_div.csv").then(data => {
     
     g.append("text")
       .attr("class", "x label")
+      .style("font", "100px")
       .attr("text-anchor", "end")
       .attr("x", width)
       .attr("y", height - 6)
