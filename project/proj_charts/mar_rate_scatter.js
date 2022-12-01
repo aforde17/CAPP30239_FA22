@@ -1,20 +1,20 @@
-let height = 400,
-    width = 600,
-    margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
-    padding = 35
+let height_mar = 400,
+    width_mar = 600,
+    margin_mar = ({ top: 25, right: 30, bottom: 35, left: 40 });
+    padding_mar = 35
   
-const svg = d3.select("#div_chart")
+const svg_mar = d3.select("#mar_chart")
     .append("svg")
-    .attr("viewBox", [0, 0, width, height]);
+    .attr("viewBox", [0, 0, width_mar, height_mar]);
 
 d3.csv('../../data/scatter_data.csv').then(data => {
 
   for (let d of data) {
-    d.div_rate_19 = +d.div_rate_19;
-    d.div_rate_20 = +d.div_rate_20; // using timeParse function we created above
+    d.mar_rate_19 = +d.mar_rate_19;
+    d.mar_rate_20 = +d.mar_rate_20; // using timeParse function we created above
   }
 
-  console.log(data)
+  //console.log(data)
   const groups = ["Came into effect before March 22", "Came into effect before March 29", "Came into effect before April 5",
   "Came into effect before April 12", "No Statewide order"]
 
@@ -23,49 +23,50 @@ d3.csv('../../data/scatter_data.csv').then(data => {
 
   const color = d3.scaleOrdinal()
     .domain(groups)
-    .range(["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]); //Sunset Color Scheme
+    .range(["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]);
 
   let x = d3.scaleLinear()
-    .domain([0, 5]).nice()
-    .range([margin.left, width - margin.right]);
+    .domain([0, 26]).nice()
+    .range([margin_mar.left, width_mar - margin_mar.right]);
 
   let y = d3.scaleLinear()
-    .domain([0, 5]).nice()
-    .range([height - margin.bottom, margin.top]);
+    .domain([0, 26]).nice()
+    .range([height_mar - margin_mar.bottom, margin_mar.top]);
 
-  svg.append("g")
-    .attr("transform", `translate(0,${height - margin.bottom})`)
+  svg_mar.append("g")
+    .attr("transform", `translate(0,${height_mar - margin_mar.bottom})`)
     .attr("class", "x-axis")
-    .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom))
+    .call(d3.axisBottom(x).tickSize(-height_mar + margin_mar.top + margin_mar.bottom))
 
-  svg.append("g")
-    .attr("transform", `translate(${margin.left},0)`)
+  svg_mar.append("g")
+    .attr("transform", `translate(${margin_mar.left},0)`)
     .attr("class", "y-axis")
-    .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right))
+    .call(d3.axisLeft(y).tickSize(-width_mar + margin_mar.left + margin_mar.right))
 
-  svg.append("g")
+  svg_mar.append("g")
     .selectAll("dot")
     .data(data)
     .enter()
     .append("circle")
-      .attr("cx", function (d) { return x(d.div_rate_19); } )
-      .attr("cy", function (d) { return y(d.div_rate_20); } )
+      .attr("cx", function (d) { return x(d.mar_rate_19); } )
+      .attr("cy", function (d) { return y(d.mar_rate_20); } )
       .style("fill", function (d) { return color(d.group) } )
     .join("circle")
     .attr("r", 2)
     .attr("opacity", 0.75);
 
     // Drawing a horizontal line to de-lineate change from one year to another
-    svg.append("line")          // attach a line
+    svg_mar.append("line")          // attach a line
       .style("stroke", "black")  // colour the line
       .attr("x1", 570)     // x position of the first end of the line
       .attr("y1", 26)      // y position of the first end of the line
       .attr("x2", 40)     // x position of the second end of the line
       .attr("y2", 365); 
 
-      var legend = svg.append('g')
+      var legend = svg_mar.append('g')
       .attr('class', 'legend')
-      .attr('transform', 'translate(' + (padding + 12) + ', 30)');
+      .attr('transform', 'translate(' + (padding_mar + 12) + ', 30)');
+  
 
     // Legend
     legend.selectAll('rect')
@@ -96,21 +97,31 @@ d3.csv('../../data/scatter_data.csv').then(data => {
         .attr('text-anchor', 'start')
         .attr('alignment-baseline', 'hanging');
       
-      svg.append("text")
+      
+      svg_mar.append("text")
         .attr("class", "x label")
         .attr("text-anchor", "end")
-        .attr("x", width)
-        .attr("y", height - 6)
+        .attr("x", width_mar)
+        .attr("y", height_mar - 6)
         .text("2019 Rate per 1000 persons");
       
-      svg.append("text")
+      svg_mar.append("text")
         .attr("class", "y label")
         .attr("text-anchor", "end")
         .attr("y", 15)
         .attr("dy", ".75em")
         .attr("transform", "rotate(-90)")
         .text("2020 Rate per 1000 persons");
+
+      // svg_mar.append("text")
+      //   .text("This is a circle")
+      //   .attr("x", 380)
+      //   .attr("y", 150)
+      //   .attr("dx", 50)
+      //   .attr("dy", 50);
   
+  // Attempting to include an annotation for the black line
+  // Features of the annotation
   const annotations = [
     {
       note: {
@@ -127,11 +138,10 @@ d3.csv('../../data/scatter_data.csv').then(data => {
   const makeAnnotations = d3.annotation()
     .annotations(annotations)
   
-  svg.append("g")
+  svg_mar.append("g")
     .call(makeAnnotations)
-      
 
-  const tooltip = d3.select("body").append("div")
+  const tooltip_mar = d3.select("body").append("div")
     .attr("class", "svg-tooltip")
     .style("position", "absolute")
     .style("visibility", "hidden");
@@ -139,18 +149,18 @@ d3.csv('../../data/scatter_data.csv').then(data => {
   d3.selectAll("circle")
     .on("mouseover", function(event, d) {
       d3.select(this).attr("fill", "red");
-      tooltip
+      tooltip_mar
         .style("visibility", "visible")
-        .html(`State: ${d.State}<br />2019 Divorce rate: ${d.div_rate_19}<br />2020 Divorce Rate: ${d.div_rate_20}`);
+        .html(`State: ${d.State}<br />2019 Marriage rate: ${d.mar_rate_19}<br />2020 Marriage Rate: ${d.mar_rate_20}`);
     })
     .on("mousemove", function(event) {
-      tooltip
+      tooltip_mar
         .style("top", (event.pageY - 10) + "px")
         .style("left", (event.pageX + 10) + "px");
     })
     .on("mouseout", function() {
       d3.select(this).attr("fill", "black");
-      tooltip.style("visibility", "hidden");
+      tooltip_mar.style("visibility", "hidden");
     })
     
 });

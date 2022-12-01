@@ -4,16 +4,16 @@ const tooltip = d3.select("body")
   .style("position", "absolute")
   .style("visibility", "hidden");
 
-const height = 610,
-  width = 975;
+const height_map = 610,
+  width_map = 975;
 
-const svg = d3.select("#sah_map")
+const svg_map = d3.select("#sah_map")
   .append("svg")
-  .attr("viewBox", [0, 0, width, height]);
+  .attr("viewBox", [0, 0, width_map, height_map]);
 
 Promise.all([
-  d3.csv("../../data/sah_map_data.csv"),
-  d3.json("../libs/counties-albers-10m.json")
+  d3.csv("../data/sah_map_data.csv"),
+  d3.json("libs/counties-albers-10m.json")
 ]).then(([data, us]) => {
   const dataById = {};
 
@@ -52,7 +52,7 @@ Promise.all([
         { title: "Stay-at-Home order enacted" }
       ));
 
-  svg.append("g")
+  svg_map.append("g")
     .selectAll("path")
     .data(states.features)
     .join("path")
@@ -92,7 +92,7 @@ Promise.all([
   //       { title: "Stay-at-Home order enacted" }
   //     ));
 
-  // svg.append("g")
+  // svg_map.append("g")
   //   .selectAll("path")
   //   .data(states.features)
   //   .join("path")

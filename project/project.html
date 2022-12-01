@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transforming Data</title>
+    <title>Marriage, Divorce and Stay-at-home Orders</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="test_charts/styles.css">
     <style>
         * {
             font-family: 'Assistant', sans-serif;
@@ -68,74 +69,67 @@
 <body>
     <div class="container">
         <h1>
-            Male, Armed, and White? Interpreting Data 
-            of Individuals Shot and Killed by Police 
-            Officers in 2015 
+            Marriage, Divorce and Stay-at-home Orders: Examining
+            Data on Marital and Divorce Rates and the COVID-19
+            pandemic.
         </h1>
         <div class="flex-container">
             <div class="flex-item">
                 <h2>
-                    In 2015, over 1,500 people were
-                    shot and killed by Law Enforcement
+                    The US has seen a decrease in both Marriage and Divorce
+                    rates in the past 20 years
                 </h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
             </div>
-            <div id="monthChart" class="flex-item chart">
+            <div id="us_line" class="flex-item chart">
             </div>
         </div>
         <div class="flex-container">
-            <div id="raceChart" class="flex-item chart"></div>
+            <div id="legend"></div>
+            <div id="sah_map" class="flex-item chart"></div>
             <div class="flex-item">
                 <h2>
-                    More White Individuals Were Shot and 
-                    Killed 
+                    State-wide Stay-at-Home orders were 
+                    instituted at different times
                 </h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
             </div>
         </div>
         <div class="flex-container">
             <div class="flex-item">
                 <h2>
-                    But, when adjusted by percentage of
-                    racial breakdown we see Black populations
-                    are disproportionately targeted
+                    However, Almost all States, regardless of Stay-at-home order, saw a decrease in Marriage rates
                 </h2>
-                <p>According to the <a href="https://www.census.gov/quickfacts/fact/table/US/PST045221">2020 Census</a>, White people, excluding Hispanics and Latino, make up 59.3% of the population. 13.6% of the population is Black, not Hispanic or Latino. When adjusted for these numbers, we see a disproportionate number of Black individuals shot and killed by Police.  Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
+                
+                <p>
+                    State-level marriage rate data was acquired from <a href="https://www.cdc.gov/nchs/nvss/marriage-divorce.htm" target="_blank">The CDC National Vital Statistics Service</a>.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
             </div>
-            <div id="divergingChart" class="flex-item chart"></div>
+            <div id="mar_chart" class="flex-item chart"></div>
         </div>
-        <hr>
-        <div class="float-container">
-            <div id="genderChart" class="float-left chart">
+        <div class="flex-container">
+            <div class="flex-item">
+                <h2>
+                    However, Almost all States, regardless of Stay-at-home order, saw a decrease in Divorce rates
+                </h2>
+                
+                <p>The black 45-degree line denotes a baseline where the 2019 and 2020 divorce rates are equal;
+                    above this line, 2020 rates are higher than 2019 and vice versa.
+                    State-level divorce rate data was acquired from <a href="https://www.cdc.gov/nchs/nvss/marriage-divorce.htm" target="_blank">The CDC National Vital Statistics Service</a>. </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
             </div>
-            <h2>Most Victims were Male</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet totam error neque itaque consectetur ab omnis, mollitia nihil voluptatibus ratione dolores repellat magni eligendi cupiditate possimus, eaque ipsa reiciendis aperiam?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet totam error neque itaque consectetur ab omnis, mollitia nihil voluptatibus ratione dolores repellat magni eligendi cupiditate possimus, eaque ipsa reiciendis aperiam?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet totam error neque itaque consectetur ab omnis, mollitia nihil voluptatibus ratione dolores repellat magni eligendi cupiditate possimus, eaque ipsa reiciendis aperiam?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet totam error neque itaque consectetur ab omnis, mollitia nihil voluptatibus ratione dolores repellat magni eligendi cupiditate possimus, eaque ipsa reiciendis aperiam?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet totam error neque itaque consectetur ab omnis, mollitia nihil voluptatibus ratione dolores repellat magni eligendi cupiditate possimus, eaque ipsa reiciendis aperiam?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet totam error neque itaque consectetur ab omnis, mollitia nihil voluptatibus ratione dolores repellat magni eligendi cupiditate possimus, eaque ipsa reiciendis aperiam?
-            </p>
+            <div id="div_chart" class="flex-item chart"></div>
         </div>
     </div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="bar.js"></script>
-    <script src="line.js"></script>
-    <script src="diverging-bar.js"></script>
-    <script src="script.js"></script>
+    <script src="libs/d3-color-legend.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <script src="test_charts/mar_div_line.js"></script>
+    <script src="proj_charts/map.js"></script>
+    <script src="proj_charts/mar_rate_scatter.js"></script>
+    <script src="proj_charts/div_rate_scatter.js"></script>
 </body>
 </html>

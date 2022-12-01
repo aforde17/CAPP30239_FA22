@@ -3,7 +3,7 @@ let height = 400,
     margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
     padding = 35
   
-const svg = d3.select("#chart")
+const svg = d3.select("#mar_chart")
     .append("svg")
     .attr("viewBox", [0, 0, width, height]);
 
@@ -112,6 +112,28 @@ d3.csv('../../data/scatter_data.csv').then(data => {
         .attr("dy", ".75em")
         .attr("transform", "rotate(-90)")
         .text("2020 Rate per 1000 persons");
+
+  
+  // Attempting to include an annotation for the black line
+  // Features of the annotation
+  const annotations = [
+    {
+      note: {
+        label: "Below this line, 2020 rate < 2019 rate and above the line, 2020 rate > 2019 rate",
+        title: "Equality between 2019 and 2020 rates"
+      },
+      x: 380,
+      y: 150,
+      dy: 50,
+      dx: 50
+    }
+    ]
+  
+  const makeAnnotations = d3.annotation()
+    .annotations(annotations)
+  
+  svg.append("g")
+    .call(makeAnnotations)
 
   const tooltip = d3.select("body").append("div")
     .attr("class", "svg-tooltip")

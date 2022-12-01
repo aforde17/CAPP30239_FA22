@@ -1,11 +1,11 @@
-let height = 400,
-    width = 600,
-    margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
-    padding = 35
+let height_div = 400,
+    width_div = 600,
+    margin_div = ({ top: 25, right: 30, bottom: 35, left: 40 })
+    padding_div = 35;
   
-const svg = d3.select("#div_chart")
+const svg_div = d3.select("#div_chart")
     .append("svg")
-    .attr("viewBox", [0, 0, width, height]);
+    .attr("viewBox", [0, 0, width_div, height_div]);
 
 d3.csv('../../data/scatter_data.csv').then(data => {
 
@@ -27,23 +27,23 @@ d3.csv('../../data/scatter_data.csv').then(data => {
 
   let x = d3.scaleLinear()
     .domain([0, 5]).nice()
-    .range([margin.left, width - margin.right]);
+    .range([margin_div.left, width_div - margin_div.right]);
 
   let y = d3.scaleLinear()
     .domain([0, 5]).nice()
-    .range([height - margin.bottom, margin.top]);
+    .range([height_div - margin_div.bottom, margin_div.top]);
 
-  svg.append("g")
-    .attr("transform", `translate(0,${height - margin.bottom})`)
+  svg_div.append("g")
+    .attr("transform", `translate(0,${height_div - margin_div.bottom})`)
     .attr("class", "x-axis")
-    .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom))
+    .call(d3.axisBottom(x).tickSize(-height_div + margin_div.top + margin_div.bottom))
 
-  svg.append("g")
-    .attr("transform", `translate(${margin.left},0)`)
+  svg_div.append("g")
+    .attr("transform", `translate(${margin_div.left},0)`)
     .attr("class", "y-axis")
-    .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right))
+    .call(d3.axisLeft(y).tickSize(-width_div + margin_div.left + margin_div.right))
 
-  svg.append("g")
+  svg_div.append("g")
     .selectAll("dot")
     .data(data)
     .enter()
@@ -56,16 +56,16 @@ d3.csv('../../data/scatter_data.csv').then(data => {
     .attr("opacity", 0.75);
 
     // Drawing a horizontal line to de-lineate change from one year to another
-    svg.append("line")          // attach a line
+    svg_div.append("line")          // attach a line
       .style("stroke", "black")  // colour the line
       .attr("x1", 570)     // x position of the first end of the line
       .attr("y1", 26)      // y position of the first end of the line
       .attr("x2", 40)     // x position of the second end of the line
       .attr("y2", 365); 
 
-      var legend = svg.append('g')
+      var legend = svg_div.append('g')
       .attr('class', 'legend')
-      .attr('transform', 'translate(' + (padding + 12) + ', 30)');
+      .attr('transform', 'translate(' + (padding_div + 12) + ', 30)');
 
     // Legend
     legend.selectAll('rect')
@@ -96,14 +96,14 @@ d3.csv('../../data/scatter_data.csv').then(data => {
         .attr('text-anchor', 'start')
         .attr('alignment-baseline', 'hanging');
       
-      svg.append("text")
+      svg_div.append("text")
         .attr("class", "x label")
         .attr("text-anchor", "end")
-        .attr("x", width)
-        .attr("y", height - 6)
+        .attr("x", width_div)
+        .attr("y", height_div - 6)
         .text("2019 Rate per 1000 persons");
       
-      svg.append("text")
+      svg_div.append("text")
         .attr("class", "y label")
         .attr("text-anchor", "end")
         .attr("y", 15)
@@ -111,6 +111,7 @@ d3.csv('../../data/scatter_data.csv').then(data => {
         .attr("transform", "rotate(-90)")
         .text("2020 Rate per 1000 persons");
   
+
   const annotations = [
     {
       note: {
@@ -127,11 +128,11 @@ d3.csv('../../data/scatter_data.csv').then(data => {
   const makeAnnotations = d3.annotation()
     .annotations(annotations)
   
-  svg.append("g")
+  svg_div.append("g")
     .call(makeAnnotations)
       
 
-  const tooltip = d3.select("body").append("div")
+  const tooltip_div = d3.select("body").append("div")
     .attr("class", "svg-tooltip")
     .style("position", "absolute")
     .style("visibility", "hidden");
@@ -139,18 +140,18 @@ d3.csv('../../data/scatter_data.csv').then(data => {
   d3.selectAll("circle")
     .on("mouseover", function(event, d) {
       d3.select(this).attr("fill", "red");
-      tooltip
+      tooltip_div
         .style("visibility", "visible")
         .html(`State: ${d.State}<br />2019 Divorce rate: ${d.div_rate_19}<br />2020 Divorce Rate: ${d.div_rate_20}`);
     })
     .on("mousemove", function(event) {
-      tooltip
+      tooltip_div
         .style("top", (event.pageY - 10) + "px")
         .style("left", (event.pageX + 10) + "px");
     })
     .on("mouseout", function() {
       d3.select(this).attr("fill", "black");
-      tooltip.style("visibility", "hidden");
+      tooltip_div.style("visibility", "hidden");
     })
     
 });
