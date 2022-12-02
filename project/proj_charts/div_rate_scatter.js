@@ -52,8 +52,8 @@ d3.csv('../../data/scatter_data.csv').then(data => {
       .attr("cy", function (d) { return y(d.div_rate_20); } )
       .style("fill", function (d) { return color(d.group) } )
     .join("circle")
-    .attr("r", 2)
-    .attr("opacity", 0.75);
+    .attr("r", 3)
+    .attr("opacity", 0.85);
 
     // Drawing a horizontal line to de-lineate change from one year to another
     svg_div.append("line")          // attach a line
@@ -115,12 +115,13 @@ d3.csv('../../data/scatter_data.csv').then(data => {
   const annotations = [
     {
       note: {
-        label: "Below this line, 2020 rate < 2019 rate and above the line, 2020 rate > 2019 rate",
-        title: "Equality between 2019 and 2020 rates"
+        label: "Below this line, the 2020 rate is lower than the 2019 rate and above the line, above the line, 2020 rate is greater than 2019 rate",
+        title: "45-degree line: No change between 2019 and 2020 rates",
+        wrap: 180
       },
-      x: 380,
+      x: 370,
       y: 150,
-      dy: 50,
+      dy: 30,
       dx: 50
     }
     ]

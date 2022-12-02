@@ -52,8 +52,8 @@ d3.csv('../../data/scatter_data.csv').then(data => {
       .attr("cy", function (d) { return y(d.mar_rate_20); } )
       .style("fill", function (d) { return color(d.group) } )
     .join("circle")
-    .attr("r", 2)
-    .attr("opacity", 0.75);
+    .attr("r", 3)
+    .attr("opacity", 0.85);
 
     // Drawing a horizontal line to de-lineate change from one year to another
     svg_mar.append("line")          // attach a line

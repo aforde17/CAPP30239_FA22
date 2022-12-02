@@ -1,6 +1,6 @@
 let height = 400,
     width = 600,
-    margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
+    margin = ({ top: 25, right: 30, bottom: 50, left: 50 });
     padding = 35
 
     const svg = d3.select("#us_line")

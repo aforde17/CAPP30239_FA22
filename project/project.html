@@ -74,6 +74,45 @@
             Data on Marital and Divorce Rates and the COVID-19 Pandemic.
         </h1>
         <div class="flex-container">
+            <p> With the onset of the COVID-19 Pandemic and subsequent government responses (business closures and stay-at-home orders), there was an expectation of a divorce boom as a result, with increased financial stressors and sudden close-contact with spouses. 
+                Divorce lawyers especially were <a href="https://www.businessinsider.com/why-divorces-may-spike-after-covid-19-according-divorce-lawyer-2020-7" target="_blank">predicting</a> a wave of divorce filings in a post-COVID-19 world for previously discussed reasons.
+                This project seeks to examine whether such a boom actually occurred in 2020, specifically using stay-at-home orders as a proxy for the pandemic.
+            </p>
+        </div>
+        <h2>
+            State-wide Stay-at-Home orders were 
+            instituted at different times
+        </h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>As reports of COVID-19's spread worsened in early March 2019, the governments of many cities, counties, and states in the US made the decision to institute some variation of stay-at-home orders to stem the disease.
+                    For the purposes of this project, I only consider state-level status, as whether a state's governor had instituted a state-wide order or not. Thus, states such as Utah, who had counties and cities which did
+                    have stay-at-home orders, I denote as not having a State-wide order.
+                </p>
+                <p>The visualization to the right illustrates the stay-at-home order status, categorizing states based on whether they instituted
+                    their order in a specific week. This data comes from the <a href="https://en.wikipedia.org/wiki/U.S._state_and_local_government_responses_to_the_COVID-19_pandemic/">Wikipedia</a>. States were split into categories </p>
+                    Here, we can see a lot of variation as to the timing of the stay-at-home orders, with a high majority
+                    of states who did undergo a stay-at-home order, did so within two weeks. There are a number of states, namely Utah, North Dakota, South Dakota, Iowa, Nebraska, Wyoming, Oklahoma and Arkansas,
+                    who by my definition did not have a stay-at-home order, and based on the divorce lawyer's hypothesis, should not see a change in divorce rates in comparison to the rest of the US. </div>
+            <div>
+                <div id="legend"></div>
+                <div id="sah_map" class="flex-item chart"></div>
+            </div>
+        </div>
+        <h2>
+            However, almost all States, regardless of Stay-at-home order status, saw a decrease in Divorce rates
+        </h2>
+
+        <div class="flex-container">
+            <div id="div_chart" class="flex-item chart"></div>
+            <div class="flex-item">
+                <p>The black 45-degree line denotes a baseline where the 2019 and 2020 divorce rates are equal;
+                    above this line, 2020 rates are higher than 2019 and vice versa.
+                    State-level divorce rate data was acquired from <a href="https://www.cdc.gov/nchs/nvss/marriage-divorce.htm" target="_blank">The CDC National Vital Statistics Service</a>. </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
+            </div>
+        </div>
+        <div class="flex-container">
             <div class="flex-item">
                 <h2>
                     The US has seen a decrease in both Marriage and Divorce
@@ -83,20 +122,6 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
             </div>
             <div id="us_line" class="flex-item chart">
-            </div>
-        </div>
-        <div class="flex-container">
-            <div>
-                <div id="legend"></div>
-                <div id="sah_map" class="flex-item chart"></div>
-            </div>
-            <div class="flex-item">
-                <h2>
-                    State-wide Stay-at-Home orders were 
-                    instituted at different times
-                </h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
             </div>
         </div>
         <div class="flex-container">
@@ -111,25 +136,12 @@
             </div>
             <div id="mar_chart" class="flex-item chart"></div>
         </div>
-        <div class="flex-container">
-            <div class="flex-item">
-                <h2>
-                    However, Almost all States, regardless of Stay-at-home order, saw a decrease in Divorce rates
-                </h2>
-                
-                <p>The black 45-degree line denotes a baseline where the 2019 and 2020 divorce rates are equal;
-                    above this line, 2020 rates are higher than 2019 and vice versa.
-                    State-level divorce rate data was acquired from <a href="https://www.cdc.gov/nchs/nvss/marriage-divorce.htm" target="_blank">The CDC National Vital Statistics Service</a>. </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit impedit odio illo. Incidunt soluta, maiores natus quam illo nulla cumque numquam et tempore eum! Tempore soluta repellendus natus atque.</p>
-            </div>
-            <div id="div_chart" class="flex-item chart"></div>
-        </div>
     </div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="libs/d3-color-legend.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
     <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
-    <script src="test_charts/us_line.js"></script>
+    <script src="proj_charts/us_line.js"></script>
     <script src="proj_charts/map.js"></script>
     <script src="proj_charts/mar_rate_scatter.js"></script>
     <script src="proj_charts/div_rate_scatter.js"></script>
