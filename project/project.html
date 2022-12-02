@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marriage, Divorce and Stay-at-home Orders</title>
+    <title>CAPP 239 Final Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
             justify-content: normal;
             align-items: normal;
             align-content: normal;
-            column-gap: 40px;
+            column-gap: 30px;
             margin: 60px 0px;
         }
         .flex-item {
@@ -35,7 +35,7 @@
             flex-basis: auto;
             align-self: auto;
             order: 0;
-            width: 50%;
+            width: 80%;
         }
         .float-left {
             float:left;
@@ -53,6 +53,7 @@
             padding: 5px 0px 5px 10px;
             margin-right: 10px;
         }
+
         #monthChart .y-axis line {
             stroke: #ccc;
             stroke-dasharray: 2;
@@ -69,9 +70,8 @@
 <body>
     <div class="container">
         <h1>
-            Marriage, Divorce and Stay-at-home Orders: Examining
-            Data on Marital and Divorce Rates and the COVID-19
-            pandemic.
+            Stay-at-Home Order Divorce Boom? Examining
+            Data on Marital and Divorce Rates and the COVID-19 Pandemic.
         </h1>
         <div class="flex-container">
             <div class="flex-item">
@@ -86,8 +86,10 @@
             </div>
         </div>
         <div class="flex-container">
-            <div id="legend"></div>
-            <div id="sah_map" class="flex-item chart"></div>
+            <div>
+                <div id="legend"></div>
+                <div id="sah_map" class="flex-item chart"></div>
+            </div>
             <div class="flex-item">
                 <h2>
                     State-wide Stay-at-Home orders were 
@@ -127,7 +129,7 @@
     <script src="libs/d3-color-legend.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
     <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
-    <script src="test_charts/mar_div_line.js"></script>
+    <script src="test_charts/us_line.js"></script>
     <script src="proj_charts/map.js"></script>
     <script src="proj_charts/mar_rate_scatter.js"></script>
     <script src="proj_charts/div_rate_scatter.js"></script>

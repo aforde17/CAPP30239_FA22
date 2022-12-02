@@ -1,6 +1,6 @@
 let height_mar = 400,
     width_mar = 600,
-    margin_mar = ({ top: 25, right: 30, bottom: 35, left: 40 });
+    margin_mar = ({ top: 25, right: 30, bottom: 50, left: 50 });
     padding_mar = 35
   
 const svg_mar = d3.select("#mar_chart")
@@ -60,8 +60,8 @@ d3.csv('../../data/scatter_data.csv').then(data => {
       .style("stroke", "black")  // colour the line
       .attr("x1", 570)     // x position of the first end of the line
       .attr("y1", 26)      // y position of the first end of the line
-      .attr("x2", 40)     // x position of the second end of the line
-      .attr("y2", 365); 
+      .attr("x2", 50)     // x position of the second end of the line
+      .attr("y2", 350); 
 
       var legend = svg_mar.append('g')
       .attr('class', 'legend')
@@ -73,7 +73,7 @@ d3.csv('../../data/scatter_data.csv').then(data => {
         .data(groups)
         .enter()
         .append('rect')
-        .attr('x', 0)
+        .attr('x', 8)
         .attr('y', function(d, i){
             return i * 18;
         })
@@ -90,7 +90,7 @@ d3.csv('../../data/scatter_data.csv').then(data => {
         .text(function(d){
             return d;
         })
-        .attr('x', 18)
+        .attr('x', 25)
         .attr('y', function(d, i){
             return i * 18;
         })
@@ -102,24 +102,17 @@ d3.csv('../../data/scatter_data.csv').then(data => {
         .attr("class", "x label")
         .attr("text-anchor", "end")
         .attr("x", width_mar)
-        .attr("y", height_mar - 6)
+        .attr("y", height_mar )
         .text("2019 Rate per 1000 persons");
       
       svg_mar.append("text")
         .attr("class", "y label")
         .attr("text-anchor", "end")
         .attr("y", 15)
-        .attr("dy", ".75em")
+        .attr("dy", ".01em")
         .attr("transform", "rotate(-90)")
         .text("2020 Rate per 1000 persons");
 
-      // svg_mar.append("text")
-      //   .text("This is a circle")
-      //   .attr("x", 380)
-      //   .attr("y", 150)
-      //   .attr("dx", 50)
-      //   .attr("dy", 50);
-  
   // Attempting to include an annotation for the black line
   // Features of the annotation
   const annotations = [

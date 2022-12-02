@@ -18,8 +18,6 @@ Promise.all([
   const dataById = {};
 
   for (let d of data) {
-    //d.rate = +d.rate;
-    //making a lookup table from the array (unemployment data)
     dataById[d.id] = d;
   }
 
@@ -32,7 +30,7 @@ Promise.all([
   const groups = ["Came into effect before March 22", "Came into effect before March 29", "Came into effect before April 5",
            "Came into effect before April 12", "No Statewide order"]
 
-  // // Quantize evenly breakups domain into range buckets
+  // // Sunset color scheme
   const color = d3.scaleOrdinal()
     .domain(groups)
     .range(["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]);
@@ -49,7 +47,7 @@ Promise.all([
            "By April 12", "No Statewide order"],
            ["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]
         ),
-        { title: "Stay-at-Home order enacted" }
+        { title: "Stay-at-Home order enacted", width: 520 }
       ));
 
   svg_map.append("g")

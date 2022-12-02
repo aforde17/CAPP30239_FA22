@@ -41,15 +41,15 @@
   }
 
   svg text {
-    font-size: 8px;
+    font-size: 14px;
   }
   
   .x-axis text {
-    transform: translateY(5px);
+    transform: translateY(13px);
   }
   
   .y-axis text {
-    transform: translateX(-5px);
+    transform: translateX(-13px);
   }
 
   foreignObject p {
