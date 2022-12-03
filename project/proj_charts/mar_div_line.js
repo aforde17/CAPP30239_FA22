@@ -7,7 +7,7 @@ const svg = d3.select("#us_line")
   .append("svg")
   .attr("viewBox", [0, 0, width, height]);
 
-d3.csv("../../data/us_mar_div.csv").then(data => {
+d3.csv("../data/us_mar_div.csv").then(data => {
   let timeParse = d3.timeParse("%Y");
 
   let rates = new Set();
