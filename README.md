@@ -5,11 +5,7 @@
 Main repository for Akila Forde's coursework and projects for CAPP30239 at the University of Chicago.
 
 ## Final Project - Stay-at-home Orders and their effect on Marriage and Divorce Rates
-1. [US Marriage and Divorce Rates from 2000-2020](https://aforde17.github.io/CAPP30239_FA22/project/test_charts/mar_div_line.html)
-2. [State-wide Stay-at-home Orders](https://aforde17.github.io/CAPP30239_FA22/project/test_charts/map.html)
-3. Change in Rates grouped by State-wide Stay-at-home Order
-    + [Marriage](https://aforde17.github.io/CAPP30239_FA22/project/test_charts/mar_rate_scatter.html)
-    + [Divorce](https://aforde17.github.io/CAPP30239_FA22/project/test_charts/div_rate_scatter.html)
+[Stay-at-Home Order Divorce Boom? Examining Data on Marital and Divorce Rates and the COVID-19 Pandemic.](https://aforde17.github.io/CAPP30239_FA22/project/project.html)
 
 ### Week 1:
 + Introduction and Data Selfie
@@ -33,3 +29,9 @@ Main repository for Akila Forde's coursework and projects for CAPP30239 at the U
 
 
 ### Week 6: Parts of a Whole
+
+### Week 7:
+
+### Week 8:
+
+### Week 9:
