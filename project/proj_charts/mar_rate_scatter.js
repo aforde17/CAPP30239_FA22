@@ -7,7 +7,7 @@ const svg_mar = d3.select("#mar_chart")
     .append("svg")
     .attr("viewBox", [0, 0, width_mar, height_mar]);
 
-d3.csv('../../data/scatter_data.csv').then(data => {
+d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/scatter_data.csv").then(data => {
 
   for (let d of data) {
     d.mar_rate_19 = +d.mar_rate_19;
