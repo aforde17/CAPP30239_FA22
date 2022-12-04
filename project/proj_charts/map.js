@@ -71,42 +71,5 @@ Promise.all([
       tooltip.style("visibility", "hidden");
       d3.select(this).attr("fill", d => (d.id in dataById) ? color(dataById[d.id].Group) : '#ccc');
     });
-  // // Quantize evenly breakups domain into range buckets
-  // const color = d3.scaleQuantize()
-  //   .domain([0, 10]).nice()
-  //   .range(d3.schemeBlues[5]);
-
-  // const path = d3.geoPath();
-
-  // d3.select("#legend")
-  //   .node()
-  //   .appendChild(
-  //     Legend(
-  //       d3.scaleOrdinal(
-  //         ["Came into effect before March 22", "Came into effect before March 29", "Came into effect before April 5",
-  //          "Came into effect before April 12", "No Statewide order"],
-  //         ["#400020", "#804080" , "#C080C0", "#D9B3D9", "#F2E6F2"]
-  //       ),
-  //       { title: "Stay-at-Home order enacted" }
-  //     ));
-
-  // svg_map.append("g")
-  //   .selectAll("path")
-  //   .data(states.features)
-  //   .join("path")
-  //   .attr("fill", d => (d.id in dataById) ? color(dataById[d.id].Group) : '#ccc')
-  //   .attr("d", path)
-  //   .on("mousemove", function (event, d) {
-  //     let info = dataById[d.id];
-  //     tooltip
-  //       .style("visibility", "visible")
-  //       .html(`${info.State}<br>${info.Group}%`)
-  //       .style("top", (event.pageY - 10) + "px")
-  //       .style("left", (event.pageX + 10) + "px");
-  //     d3.select(this).attr("fill", "goldenrod");
-  //   })
-  //   .on("mouseout", function () {
-  //     tooltip.style("visibility", "hidden");
-  //     d3.select(this).attr("fill", d => (d.id in dataById) ? color(dataById[d.id].Group) : '#ccc');
-  //   });
+    
 });

@@ -87,7 +87,7 @@ let height = 400,
               .attr("class", "y label")
               .attr("text-anchor", "end")
               .attr("y", 15)
-              .attr("dy", ".0.01em")
+              .attr("dy", "0.01em")
               .attr("transform", "rotate(-90)")
               .text("Rate per 1000 people");
         
