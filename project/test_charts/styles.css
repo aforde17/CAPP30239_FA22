@@ -32,6 +32,23 @@
     visibility: hidden;
   }
 
+  .svg-tooltip-line {
+    background: rgba(69, 77, 93, .9);
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: none;
+    max-width: 320px;
+    padding: 1rem;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: pre;
+    z-index: 300;
+    visibility: hidden;
+  }
+
   .domain {
     display: none;
   }

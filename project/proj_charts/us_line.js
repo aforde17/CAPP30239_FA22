@@ -13,11 +13,12 @@ let height = 400,
         let rates = new Set();
 
         for (let d of data) {
+            d.Yearstr = d.Year
             d.Year = timeParse(d.Year);
             d.value = +d.value;
             rates.add(d.variable);
           }
-        
+        console.log(rates)
         let x = d3.scaleTime()
             .domain(d3.extent(data, d => d.Year))
             .range([margin.left, width - margin.right]);
@@ -45,6 +46,41 @@ let height = 400,
         colorRange = ["#d3273e", "#0000A8"]
         var color = d3.scaleOrdinal().domain(seriesColors).range(colorRange);
 
+                
+        svg.append("g")
+          .selectAll("dot")
+          .data(data)
+          .enter()
+          .append("circle")
+            .attr("cx", function (d) { return x(d.Year); } )
+            .attr("cy", function (d) { return y(d.value); } )
+            .style("fill", function (d) { return color(d.variable) } )
+          .join("circle")
+          .attr("r", 3)
+          .attr("opacity", 0.85);
+        
+        const tooltip_line = d3.select("body").append("div")
+            .attr("class", "svg-tooltip-line")
+            .style("position", "absolute")
+            .style("visibility", "hidden");
+
+          d3.selectAll("circle")
+            .on("mouseover", function(event, d) {
+              d3.select(this).attr("fill", "red");
+              tooltip_line
+                .style("visibility", "visible")
+                .html(`${d.Yearstr}: ${d.value} ${d.variable} \n per 1000 people`);
+            })
+            .on("mousemove", function(event) {
+              tooltip_line
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
+            })
+            .on("mouseout", function() {
+              d3.select(this).attr("fill", "black");
+              tooltip_line.style("visibility", "hidden");
+            })
+
         for (let rate of rates) {
             let rateData = data.filter(d => d.variable === rate);
         
@@ -55,16 +91,14 @@ let height = 400,
                 d3.select(this).classed("highlight", true);
               });
         
-            if (rate === "Marriages") {
-              g.classed("highlight", true);
-            }
-        
             g.append("path")
               .datum(rateData)
               .attr("fill", "none")
               .attr("stroke", function (d) { return color(rate);})
               .attr("d", line)
-        
+            
+           
+                  
             let lastEntry = rateData[rateData.length - 1]; //last piece of data to position text x and y
         
             g.append("text")
@@ -86,12 +120,13 @@ let height = 400,
               .attr("class", "y label")
               .attr("text-anchor", "end")
               .attr("y", 15)
-              .attr("dy", ".0.01em")
+              .attr("dy", "0.01em")
               .attr("transform", "rotate(-90)")
               .text("Rate per 1000 people");
         
         
           }
+    
           
         });
         

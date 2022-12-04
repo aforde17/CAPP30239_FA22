@@ -13,6 +13,7 @@ let height = 400,
         let rates = new Set();
 
         for (let d of data) {
+            d.Yearstr = d.Year
             d.Year = timeParse(d.Year);
             d.value = +d.value;
             rates.add(d.variable);
