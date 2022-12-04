@@ -7,7 +7,7 @@ const svg_div = d3.select("#div_chart")
     .append("svg")
     .attr("viewBox", [0, 0, width_div, height_div]);
 
-d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/data/scatter_data.csv").then(data => {
+d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/scatter_data.csv").then(data => {
 
   for (let d of data) {
     d.div_rate_19 = +d.div_rate_19;
