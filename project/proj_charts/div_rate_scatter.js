@@ -11,15 +11,12 @@ d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/scatter_data.csv").then(d
 
   for (let d of data) {
     d.div_rate_19 = +d.div_rate_19;
-    d.div_rate_20 = +d.div_rate_20; // using timeParse function we created above
+    d.div_rate_20 = +d.div_rate_20; 
   }
 
   console.log(data)
   const groups = ["Came into effect before March 22", "Came into effect before March 29", "Came into effect before April 5",
   "Came into effect before April 12", "No Statewide order"]
-
-// // Quantize evenly breakups domain into range buckets
-  // Color scale: give me a specie name, I return a color
 
   const color = d3.scaleOrdinal()
     .domain(groups)

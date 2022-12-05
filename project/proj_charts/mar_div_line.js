@@ -8,7 +8,7 @@ const svg = d3.select("#us_line")
   .attr("viewBox", [0, 0, width, height]);
 
 d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(data => {
-  
+
   let timeParse = d3.timeParse("%Y");
 
   let rates = new Set();
@@ -34,14 +34,13 @@ d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(dat
 
   svg.append("g")
     .attr("transform", `translate(${margin.left},0)`)
-    .style("font-size", "100px") // Font-size not working
+    .style("font-size", "100px") // Font-size not working - needed to set it in style.css
     .call(d3.axisLeft(y).tickFormat(d => d ));
 
   let line = d3.line()
     .x(d => x(d.Year))
     .y(d => y(d.value));
 
-    //var color = d3.scale.category10();  // set the colour scale
 
   seriesColors = ["Marriages", "Divorces"]
   colorRange = ["#d3273e", "#0000A8"]
@@ -68,7 +67,7 @@ d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(dat
       .attr("stroke", function (d) { return color(rate);})
       .attr("d", line)
 
-    let lastEntry = rateData[rateData.length - 1]; //last piece of data to position text x and y
+    let lastEntry = rateData[rateData.length - 1]; 
 
     g.append("text")
       .text(rate)
