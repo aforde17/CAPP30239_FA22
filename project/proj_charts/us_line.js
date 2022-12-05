@@ -7,7 +7,7 @@ let height = 400,
     .append("svg")
     .attr("viewBox", [0, 0, width, height]);
 
-    d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(data => {
+    d3.csv("//aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(data => {
         let timeParse = d3.timeParse("%Y");
       
         let rates = new Set();
