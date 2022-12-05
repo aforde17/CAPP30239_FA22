@@ -99,14 +99,15 @@
             rates in the past 20 years
         </h2>
         <div class="flex-container">
+            <div id="us_line" class="flex-item chart">
+            </div>
             <div class="flex-item">
                 <p>2020 saw a number of COVID-19 responses to curb the disease's spread, among which were state-wide and nationally-seen prohibitions of large gatherings, a trend which saw many marriages postponed or occurring on smaller scales. Thus, a fall in marriage rates in comparison to 2019, was to be expected. According to national marriage and divorce rate data acquired from <a href="https://www.cdc.gov/nchs/nvss/marriage-divorce.htm" target="_blank">The CDC National Vital Statistics Service</a>, such a fall did occur. However, while the 2019-2020 decline was the sharpest in 20 years, it follows a precedent that was already established: declining U.S. marital rates. </p>
                 <p>Despite this, were the responses to COVID-19 related to a increase in divorces, there should have been spike in the U.S. divorce rates between 2019 and 2020. 
                     The contrary happened instead, with divorce rates also following the 20-year trend of decline. It begs the question: what if there were less divorces overall, 
                     but with how varied responses to COVID-19 were, the aggregated national date is hiding actual divorce booms that happened by state? This led me to examine specifically the relationaship with the type of stay-at-home order and divorce rates.</p>
             </div>
-            <div id="us_line" class="flex-item chart">
-            </div>
+
         </div>
         <h2>
             State-wide Stay-at-Home orders were 
@@ -159,7 +160,22 @@
             </p>
 
             <strong>Where does the data come from? Include link to their website and where the data was collected.</strong>
-            <p></p>
+            <p>
+                <ol type="1">
+                    <li>U.S. Marriage and Divorce Statistics by States between 2000-2020 
+                        <ul>
+                            <li> Marriage and divorce rates per 1000 people by state as to whether they entered or exited a marriage in the past year.</li> 
+                            <li>Source: Center for Disease Control/National Center for Health Statistics, National Vital Statistics System.</li> 
+                        </ul>
+                    </li>
+                    <li> State-level COVID-19 Stay-at-Home Policies
+                        <ul>
+                            <li>Collection of indicator and date variables as to whether a state enacted a state-wide stay-at-home order or not, and if it did, when the order was enacted and rescinded.</li> 
+                            <li>Source: <a href="https://www.nytimes.com/interactive/2020/us/coronavirus-stay-at-home-order.html">The New York Times</a> and <a href="https://en.wikipedia.org/wiki/U.S._state_and_local_government_responses_to_the_COVID-19_pandemic">Wikipedia</a></li> 
+                        </ul>
+                    </li>
+                  </ol>  
+            </p>
 
             <strong>What were other options for data and why did you choose this data set?</strong>       
             <p>
@@ -174,7 +190,8 @@
 
             <strong>How did you define your story? Any pivots that you made.</strong>
             <p>
-                My story came about as 
+                My story came about as an nitial exploration in how marriage and divorce rates changed from pre-COVID19 to 2020, but as my visualizatiions came together,
+                I realized my findings were contrary to the reports that were circulated. This led me to formalize my narrative of contradicting these predictions with what the datapoints actually showed.
             </p>
 
             <strong>Any ethical consideration in the story telling or disclosures you would like to make about choices you made while visualizing?</strong>
@@ -213,7 +230,7 @@
     <script src="//rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
     <script src="//aforde17.github.io/CAPP30239_FA22/project/proj_charts/us_line.js"></script>
     <script src="//aforde17.github.io/CAPP30239_FA22/project/proj_charts/map.js"></script>
-    <script src="//aforde17.github.io/CAPP30239_FA22/project/proj_charts/mar_rate_scatter.js"></script>
+    <!-- <script src="//aforde17.github.io/CAPP30239_FA22/project/proj_charts/mar_rate_scatter.js"></script> -->
     <script src="//aforde17.github.io/CAPP30239_FA22/project/proj_charts/div_rate_scatter.js"></script>
 </body>
 </html>
