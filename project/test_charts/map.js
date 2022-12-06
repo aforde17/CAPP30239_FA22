@@ -49,7 +49,7 @@ Promise.all([
            "By April 12", "No Statewide order"],
            ["#003f5c", "#58508d" , "#bc5090", "#ff6361", "#ffa600"]
         ),
-        { title: "Stay-at-Home order enacted" }
+        { title: "Stay-at-Home order enacted", width: 520 }
       ));
 
   svg.append("g")

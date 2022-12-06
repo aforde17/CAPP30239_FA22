@@ -86,8 +86,9 @@
             Examining Data on Marital and Divorce Rates and the COVID-19 Pandemic.
             </center>
         </h1>
+        <center>By: Akila Forde</center>
         <div>
-            <p> With the onset of the COVID-19 Pandemic and subsequent government responses (business closures and stay-at-home orders), there was an expectation of a divorce boom. A combination of finanical stressors, grief, illness and child-care situations were excerbated during COVID-19 and <a href="https://legaltemplates.net/resources/personal-family/divorce-rates-covid-19/#divorces-increase-in-couples-with-children">reported</a> as major factors behind couples' decisions to separate.
+            <p> With the onset of the COVID-19 pandemic and subsequent government responses (business closures and stay-at-home orders), there was an expectation of a divorce boom. A combination of finanical stressors, grief, illness and child-care situations were excerbated during COVID-19 and <a href="https://legaltemplates.net/resources/personal-family/divorce-rates-covid-19/#divorces-increase-in-couples-with-children">reported</a> as major factors behind couples' decisions to separate.
                 However, many of the articles positing this boom of divorces cited research from <a href="https://www.businessinsider.com/why-divorces-may-spike-after-covid-19-according-divorce-lawyer-2020-7" target="_blank">divorce lawyers</a>and <a href="https://www.businessinsider.com/why-divorces-may-spike-after-covid-19-according-divorce-lawyer-2020-7" target="_blank">legal documentation preparation websites</a>, predicting a wave of divorce filings in a post-COVID-19 world for the previously discussed reasons.
             </p>
             <p>
@@ -135,19 +136,20 @@
         <div class="flex-container">
             <div id="div_chart" class="flex-item chart"></div>
             <div class="flex-item">
-                <p>The figure to the right depicts the relationship between 2019 and 2020 state-level divorce rates, categorized by the timing of the state's stay-at-home order.
+                <p>The figure to the left depicts the relationship between 2019 and 2020 state-level divorce rates, categorized by the timing of the state's stay-at-home order.
                     The 45-degree line represents a baseline where there was no change between the two years, for a state below this line, their 2020 divorce rate is lower than that of 2019 and vice versa.
                     State-level divorce rate data was acquired from <a href="https://www.cdc.gov/nchs/nvss/marriage-divorce.htm" target="_blank">The CDC National Vital Statistics Service</a>, excluding California,
                     Hawaii, Indiana, Minnesota, and New Mexico. Based on the hypothesis that stay-at-home orders lead to a divorce boom, those states with no statewide order would be on the upper half of the 45-degree line,
                     which is not the case. However, on average, the states with no statewide order saw small decreases in their divorce rates than others, hinting at the possibility that the opposite is true,
                     that states without stay-at-home orders actually saw more divorces on average than their stay-at-home-order-enacted counterparts.
                 </p>
-                <p>
-                    Despite, illustrating the 2020 divorce boom did not happen, I will concede that it is possible a COVID-19 related divorce boom is in the works as there is a significant lag in when divorces are officially finalized
-                    and tallied. Combined with judicial delays because of shutdowns, we may see an increase in divorces in the coming 2021 and 2022 CDC state-level data. But as of now, there is no boom in 2020. 
-                </p>
                             </div>
         </div>
+        <div>                <p>
+            Despite, illustrating the 2020 divorce boom did not happen, I will concede that it is possible a COVID-19 related divorce boom is in the works as there is a significant lag in when divorces are officially finalized
+            and tallied. Combined with judicial delays because of shutdowns, we may see an increase in divorces in the coming 2021 and 2022 CDC state-level data. But as of now, there is no boom in 2020. 
+        </p></div>
+        <hr>
         <h2>
             <center> PROCESS:</center>
         </h2>
@@ -165,7 +167,7 @@
                     <li>U.S. Marriage and Divorce Statistics by States between 2000-2020 
                         <ul>
                             <li> Marriage and divorce rates per 1000 people by state as to whether they entered or exited a marriage in the past year.</li> 
-                            <li>Source: Center for Disease Control/National Center for Health Statistics, National Vital Statistics System.</li> 
+                            <li>Source: <a href="https://www.cdc.gov/nchs/nvss/marriage-divorce.htm" target="_blank">Center for Disease Control/National Center for Health Statistics, National Vital Statistics System.</a></li> 
                         </ul>
                     </li>
                     <li> State-level COVID-19 Stay-at-Home Policies
@@ -202,7 +204,8 @@
             <strong>Why did you choose the charts you chose? How do they help tell the story?</strong>
             <p>
                 I chose the charts above for my story because they were an easily digestible way to present my story, that not only did a divorce boom not happen in 2020, but that stay-at-home orders did not correspond
-                with any increases in divorce filings in the 2020.
+                with any increases in divorce filings in the 2020. The US state map was a chart I really wanted to depict as it made the point that there was a lot of heterogeneity in government responses and the sunset colorscheme,
+                which I maintain in the following scatter chart, grouped cohesively those states who did institute a state-wide stay-at-home order against those who did not.
             </p>
 
             <strong>Any coding challenges or takeaways?</strong>
@@ -210,6 +213,9 @@
             Most of my challenges were related to using D3 to create the visualizations I needed to tell my story as well as debugging issue I found with the frankly lacking documentation related to certain charts.
             For example, rather than the scatter plot I used as my third graph, I initially wanted to attempt a slope graph using the same data, however I found it really difficult to properly visualize with online resources
             and figured that this scatter plot could visualize the same story, but I needed to annotate what relationship was being depicted very well.
+            </p>
+            <p>
+            I pivoted to doing most of my data cleaning in Python before using them in my d3 charts, one challenge included acquiring a State-FIPS crosswalk to merge with my state data so I could leverage the mapping library we used in class.
             </p>
             <p>
             Another challenge I faced entailed with syncing the local HTML work I'd done with the Github pages, as sometimes the link to my project page gives an out-of-date article and visualizations.
