@@ -89,7 +89,7 @@
         <center>By: Akila Forde</center>
         <div>
             <p> With the onset of the COVID-19 pandemic and subsequent government responses (business closures and stay-at-home orders), there was an expectation of a divorce boom. A combination of finanical stressors, grief, illness and child-care situations were excerbated during COVID-19 and <a href="https://legaltemplates.net/resources/personal-family/divorce-rates-covid-19/#divorces-increase-in-couples-with-children">reported</a> as major factors behind couples' decisions to separate.
-                However, many of the articles positing this boom of divorces cited research from <a href="https://www.businessinsider.com/why-divorces-may-spike-after-covid-19-according-divorce-lawyer-2020-7" target="_blank">divorce lawyers</a>and <a href="https://www.businessinsider.com/why-divorces-may-spike-after-covid-19-according-divorce-lawyer-2020-7" target="_blank">legal documentation preparation websites</a>, predicting a wave of divorce filings in a post-COVID-19 world for the previously discussed reasons.
+                However, many of the articles positing this boom of divorces cited research from <a href="https://www.businessinsider.com/why-divorces-may-spike-after-covid-19-according-divorce-lawyer-2020-7" target="_blank">divorce lawyers</a> and <a href="https://www.businessinsider.com/why-divorces-may-spike-after-covid-19-according-divorce-lawyer-2020-7" target="_blank">legal documentation preparation websites</a>, predicting a wave of divorce filings in a post-COVID-19 world for the previously discussed reasons.
             </p>
             <p>
                 This project seeks to examine whether such a boom actually occurred in 2020 or whether those expecting it to occur were looking at too-small samples of data to determine that COVID-19, and specifically stay-at-home orders, lead to an increase in divorces.
@@ -181,38 +181,38 @@
 
             <strong>What were other options for data and why did you choose this data set?</strong>       
             <p>
-                Other options for data I could have used were the U.S. Census' American Community Survey for 2019 and 2020 as unlike the state-level divorce data from the CDC, 
-                it would give estimates for states not included in the latter. However, the major concern with using the ACS data, was that Census put a warning not to compare
-                their 2020 1-year estimates with previous years due to COVID-19-related quality concerns. That and it takes a while to prepare ACS data for analysis.
+                Other options for data I could have used were the U.S. Census' American Community Survey for 2019 and 2020, as unlike the state-level divorce data from the CDC, 
+                it would give estimates for states not included in the latter. However, the major concern with using the ACS data was that Census put a warning not to compare
+                their 2020 1-year estimates with previous years due to COVID-19-related quality. Additionally, due to the time constraints of this course, it was unfeasible to sufficiently prepare the ACS data within the alloted timeframe.
             </p>
 
             <strong>Is any data missing? Do you have concerns about data gaps?</strong>
             <p>The main missing data points are the divorce rates for California, Hawaii, Indiana, Minnesota, and New Mexico, which historically do not report their number of divorces due to state laws.
-                These data gaps could've been filled. </p>
+                These data gaps could've been filled with estimates from the American Community Survey, as described above. I am not too concerned with these gaps, as my analysis specifically was concerned with within-state changes in divorce rates. </p>
 
             <strong>How did you define your story? Any pivots that you made.</strong>
             <p>
-                My story came about as an initial exploration in how marriage and divorce rates changed from pre-COVID19 to 2020, but as my visualizations came together,
+                My story came about as an initial exploration in how marriage and divorce rates changed from pre-COVID-19 to 2020, but as my visualizations came together,
                 I realized my findings were contrary to the reports that were circulated. This led me to formalize my narrative of contradicting these predictions with what the data points actually showed.
             </p>
 
             <strong>Any ethical consideration in the story telling or disclosures you would like to make about choices you made while visualizing?</strong>
-            <p>The main ethical consideration was that I was not attempting to make any claims that Stay-at-home orders caused an influx in divorces, and I understand that my 45-degree line may at first seem like
-                a regression line, so I made sure to annotate what it represents as explicitly as possible.
+            <p>The main ethical consideration was that I was not attempting to make any claims that Stay-at-home orders caused an influx in divorces. While I understand that my 45-degree line may at first seem like
+                a regression line, I made sure to assert that it was not attempting to assert any causation by annotating what it represents as explicitly as possible.
             </p>
 
             <strong>Why did you choose the charts you chose? How do they help tell the story?</strong>
             <p>
-                I chose the charts above for my story because they were an easily digestible way to present my story, that not only did a divorce boom not happen in 2020, but that stay-at-home orders did not correspond
-                with any increases in divorce filings in the 2020. The US state map was a chart I really wanted to depict as it made the point that there was a lot of heterogeneity in government responses and the sunset colorscheme,
-                which I maintain in the following scatter chart, grouped cohesively those states who did institute a state-wide stay-at-home order against those who did not.
+                I chose the charts above because they were an easily digestible way to present my findings not only did a divorce boom not happen in 2020, but that stay-at-home orders did not correspond
+                with any increases in divorce filings in the 2020. The US state map was a chart I really wanted to depict as it made the point that there was a lot of heterogeneity in government responses across states and the sunset colorscheme,
+                which I maintain in the following scatter chart, cohesively grouped those states who did institute a state-wide stay-at-home order against those who did not.
             </p>
 
             <strong>Any coding challenges or takeaways?</strong>
             <p>
-            Most of my challenges were related to using D3 to create the visualizations I needed to tell my story as well as debugging issue I found with the frankly lacking documentation related to certain charts.
-            For example, rather than the scatter plot I used as my third graph, I initially wanted to attempt a slope graph using the same data, however I found it really difficult to properly visualize with online resources
-            and figured that this scatter plot could visualize the same story, but I needed to annotate what relationship was being depicted very well.
+            Most of my challenges were related to using D3 to create the visualizations needed to illustrate my story, as well as debugging issues I found with the lacking documentation related to certain charts.
+            For example, rather than the scatter plot I used as my third graph, I initially wanted to attempt a slope graph using the same data. However, I found it difficult to properly imwplement ith online resources
+            and figured that this scatter plot could visualize the same story, the only caveat being that I needed to annotate what relationship was being depicted explicitly.
             </p>
             <p>
             I pivoted to doing most of my data cleaning in Python before using them in my d3 charts, one challenge included acquiring a State-FIPS crosswalk to merge with my state data so I could leverage the mapping library we used in class.
