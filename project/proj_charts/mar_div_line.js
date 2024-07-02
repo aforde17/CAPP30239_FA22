@@ -46,7 +46,6 @@ d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(dat
   colorRange = ["#d3273e", "#0000A8"]
   var color = d3.scaleOrdinal().domain(seriesColors).range(colorRange); 
 
- 
   for (let rate of rates) {
     let rateData = data.filter(d => d.variable === rate);
 
@@ -64,8 +63,8 @@ d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(dat
     g.append("path")
       .datum(rateData)
       .attr("fill", "none")
-      .attr("stroke", function (d) { return color(rate);})
-      .attr("d", line)
+      .attr("stroke", function (d) { return color(rate); })
+      .attr("d", line);
 
     let lastEntry = rateData[rateData.length - 1]; 
 
@@ -74,8 +73,8 @@ d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(dat
       .attr("x", x(lastEntry.Year) - 30)
       .attr("y", y(lastEntry.value) + 15)
       .attr("dominant-baseline", "middle")
-      .attr("fill", function (d) { return color(rate);});
-    
+      .attr("fill", function (d) { return color(rate); });
+
     g.append("text")
       .attr("class", "x label")
       .style("font", "100px")
@@ -83,16 +82,14 @@ d3.csv("https://aforde17.github.io/CAPP30239_FA22/data/us_mar_div.csv").then(dat
       .attr("x", width)
       .attr("y", height - 6)
       .text("Year");
-    
-      g.append("text")
+
+    g.append("text")
       .attr("class", "y label")
       .attr("text-anchor", "end")
       .attr("y", 15)
       .attr("dy", ".75em")
       .attr("transform", "rotate(-90)")
       .text("Rate per 1000 people");
-
-
   }
-  
+ 
 });
